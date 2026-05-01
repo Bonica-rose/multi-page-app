@@ -1,31 +1,54 @@
-import { useParams } from "react-router-dom";
-import { Link, useLoaderData } from "react-router-dom";
+import { useParams, Link, useLoaderData } from "react-router-dom";
 
 const User = () => {
   const { type } = useParams();
-  const user = useLoaderData(); 
-  
+  const user = useLoaderData();
+
   return (
-    <div className="flex flex-col items-center mt-10 px-4">
-      <h2 className="text-3xl text-lime-900 font-bold mb-6">User Details</h2>
-      <div className="max-w-4xl p-4 bg-lime-100 rounded-xl shadow hover:shadow-md transition flex flex-col">
+    <div className="min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 py-10">
+      <div className="w-xl max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl bg-lime-100 rounded-2xl shadow-md hover:shadow-lg transition p-3">
 
-        <p><b>Name:</b> {user.name ?? `${user.firstName} ${user.lastName}` }</p>
-        <p><b>Email: </b>{user.email}</p>
-        <p><b>Age:</b> {user.age}</p>
-        <p><b>Job:</b> {user.job ?? user.company.title}</p>
-        <p><b>Place:</b> {user.place ?? user.address.city}</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-lime-900 text-center mb-6">
+          User Details
+        </h2>
 
-        <Link
-          to={type === 'api' ? '/users/api' : '/users'}
-          className="mt-3 bg-black text-white text-sm px-4 py-2 rounded-lg inline-flex w-fit"
-        >
-          Go Back
-        </Link>
+        <div className="space-y-3 text-sm sm:text-base text-gray-800">
+          <p>
+            <span className="font-semibold">Name:</span>{" "}
+            {user.name ?? `${user.firstName} ${user.lastName}`}
+          </p>
+
+          <p>
+            <span className="font-semibold">Email:</span> {user.email}
+          </p>
+
+          <p>
+            <span className="font-semibold">Age:</span> {user.age}
+          </p>
+
+          <p>
+            <span className="font-semibold">Job:</span>{" "}
+            {user.job ?? user.company?.title}
+          </p>
+
+          <p>
+            <span className="font-semibold">Place:</span>{" "}
+            {user.place ?? user.address?.city}
+          </p>
+        </div>
+
+        <div className="mt-4 flex justify-center sm:justify-start">
+          <Link
+            to={type === "api" ? "/users/api" : "/users"}
+            className="bg-black text-white text-sm sm:text-base px-4 py-1.5 rounded-lg hover:bg-gray-900 transition w-full sm:w-auto text-center"
+          >
+            Go Back
+          </Link>
+        </div>
 
       </div>
     </div>
   );
-}
+};
 
-export default User
+export default User;
