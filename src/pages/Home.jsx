@@ -16,8 +16,8 @@ const Home = () => {
         <h2 className="text-lg font-semibold mb-2 text-lime-900">Features:</h2>
         <ul className="list-disc list-inside text-lime-700">
           <li>Client-side routing</li>
-          <li>Dynamic user pages</li>
-          <li>API data fetching</li>
+          <li>Dynamic user detail pages</li>
+          <li>Supports both mock data and API data</li>
         </ul>
       </div>
 
