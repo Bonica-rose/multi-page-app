@@ -44,13 +44,13 @@
 ![About](./screenshots/About.png)   
 
 ### Users List
-![Users List](./screenshots/Users List.png)  
+![Users List](./screenshots/UsersList.png)  
 
 ### API Users List
-![API Users List](./screenshots/API Users List.png)   
+![API Users List](./screenshots/APIUsersList.png)   
 
 ### User Details
-![User Details](./screenshots/User Details.png)   
+![User Details](./screenshots/UserDetails.png)   
 
 ## Acknowledgement
 Built as part of React learning assignment
