@@ -9,7 +9,7 @@ const Home = () => {
       <p className="text-gray-600 text-center max-w-xl">
         This is a multi-page React application built using React Router.
         You can navigate between different pages like Home, About, and User List.
-        It also demonstrates dynamic routing.
+        It also demonstrates dynamic routing, and API data fetching.
       </p>
 
       <div className="mt-6 p-4 bg-lime-100 rounded-xl shadow-md">

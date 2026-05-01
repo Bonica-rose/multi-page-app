@@ -1,19 +1,18 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
 
     const location = useLocation(); // Get current route info
 
-    const linkClass =
-        "px-2 py-1 rounded-full text-black-700 transition";
+    const linkClass = "px-3 py-1.5 rounded-full text-sm sm:text-base text-black transition whitespace-nowrap";
+    const activeClass = "bg-lime-100 text-lime-700 font-medium shadow";
+    const diffClass = "bg-pink-100 text-pink-600 font-semibold"; 
 
-    const activeClass =
-        "text-lime-600 font-medium";
-
-    return (
-        // <div className="flex justify-center">
-        <div className="relative flex justify-center w-full">
-            <nav className="flex gap-2 bg-white px-2 py-1 rounded-full mt-3 shadow-md shadow-lime-500">
+    return (       
+        
+        <div className="flex justify-center px-2">
+            <nav className="flex gap-2 bg-white px-2 py-2 rounded-full mt-3 shadow-md shadow-lime-500
+        overflow-x-auto max-w-full">
                 <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -33,27 +32,27 @@ const Navbar = () => {
                 </NavLink>
 
                 <NavLink
-                to="/users"
-                className={({ isActive }) =>
-                    `${linkClass} ${isActive ? activeClass : ""}`
-                }
+                    to="/users"
+                    end
+                    className={({ isActive }) =>
+                        `${linkClass} ${isActive ? activeClass : ""}`
+                    }
                 >
                 Users
                 </NavLink>
 
+                {location.pathname.startsWith('/users') && (
+                    <NavLink
+                        to='/users/api'
+                        className={({ isActive }) =>
+                            `${linkClass} ${isActive ? diffClass : ""}`
+                        }
+                    >
+                    API Users
+                    </NavLink>
+                )}
                 
-            </nav>
-
-            {location.pathname === '/users' && (
-                <Link
-                to='/fetch/users'
-                className="absolute right-16 mt-4 
-                bg-black text-balance text-white px-5 py-1.5 rounded-full"
-                >
-                    Use API
-                </Link>
-            )}
-
+            </nav> 
             
         </div>
     );

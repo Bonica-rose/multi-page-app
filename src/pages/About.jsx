@@ -9,7 +9,7 @@ const About = () => {
             <p className="text-gray-600 text-center max-w-xl">
                 This application is built using React and React Router to demonstrate
                 multi-page navigation in a single-page application (SPA). It showcases
-                features like dynamic routing, protected routes, and API data fetching.
+                features like dynamic routing, and API data fetching.
             </p>
 
             <div className="mt-6 p-4 bg-lime-100 rounded-xl shadow-md max-w-xl">
